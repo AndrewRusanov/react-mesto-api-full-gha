@@ -1,0 +1,77 @@
+/*Подключение стилей normalize.css*/
+@import url(./vendor/normalize.css);
+/* Подключение стилей .fonts */
+/* @import url(./fonts/inter.css); */
+/* Подключение стилей .main */
+@import url(./blocks/main/main.css);
+/* Подключение стилей .page */
+@import url(./blocks/page/page.css);
+/* Подключение стилей .header */
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__info/header__info.css);
+@import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__link-out/header__link-out.css);
+/* Подключение стилей .profile */
+@import url(./blocks/profile/profile.css);
+@import url(./blocks//profile/__avatar-container/profile__avatar-container.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__flex/profile__flex.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__description/profile__description.css);
+@import url(./blocks/profile/__button/profile__button.css);
+@import url(./blocks/profile/__button/_type/profile__button_type_add.css);
+@import url(./blocks/profile/__button/_type/profile__button_type_edit.css);
+@import url(./blocks/profile/__button-edit/profile__button-edit.css);
+@import url(./blocks/profile/__button-add/profile__button-add.css);
+/* Подключение стилей .elements */
+@import url(./blocks/elements/elements.css);
+/* Подключение стилей .element */
+@import url(./blocks/element/element.css);
+@import url(./blocks/element/__description/element__description.css);
+@import url(./blocks/element/__text/element__text.css);
+@import url(./blocks/element/__mask/element__mask.css);
+@import url(./blocks/element/__like/element__like.css);
+@import url(./blocks/element/__delete/element__delete.css);
+@import url(./blocks/element/__delete-icon/element__delete-icon.css);
+@import url(./blocks/element/__like/_active/element__like_active.css);
+@import url(./blocks//element/__like-container/element__like-conrainer.css);
+@import url(./blocks/element/__like-count/element__like-count.css);
+/* Подключение стилей .footer */
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__text/footer__text.css);
+/* Подключение стилей .popup */
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__close-button/popup__close-button.css);
+@import url(./blocks/popup/__close-icon/popup__close-icon.css);
+@import url(./blocks/popup/__label/popup__label.css);
+@import url(./blocks/popup/__form/popup__form.css);
+@import url(./blocks/popup/__input/popup__input.css);
+@import url(./blocks/popup/__button/popup__button.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__figure/popup__figure.css);
+@import url(./blocks/popup/__photo/popup__photo.css);
+@import url(./blocks/popup/__image/popup__image.css);
+@import url(./blocks/popup/__caption/popup__caption.css);
+@import url(./blocks/popup/_overlay/popup_overlay.css);
+@import url(./blocks/popup/__error/popup__error.css);
+@import url(./blocks/popup/__button/_disabled/popup__button_disabled.css);
+@import url(./blocks/popup/__error/_visible/popup__error_visible.css);
+@import url(./blocks/popup/__input/_type/popup__input_type_error.css);
+/* Подключение стилей для .sign */
+@import url(./blocks/sign/sign.css);
+@import url(./blocks/sign/__title/sign__title.css);
+@import url(./blocks/sign/__subtitle/sign__subtitle.css);
+@import url(./blocks/sign/__link-in/sign__link-in.css);
+/* Подключение стилей для .form */
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__button/form__button.css);
+/* Подключение стилей для .tooltip */
+@import url(./blocks/popup/__tooltip/popup__tooltip.css);
+@import url(./blocks/popup/__tooltip/_success/popup__tooltip_success.css);
+@import url(./blocks/popup/__tooltip/_failure/popup__tooltip_failure.css);
+@import url(./blocks/popup/__subtitle-tip/poup__subtitle-tip.css);
