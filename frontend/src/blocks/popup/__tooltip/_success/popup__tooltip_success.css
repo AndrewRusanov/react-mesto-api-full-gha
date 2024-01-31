@@ -1,7 +1,0 @@
-.popup__tooltip_success {
-  color: black;
-  width: 120px;
-  height: 120px;
-  background: url(../../../../images/succsess.svg) no-repeat center;
-  object-fit: cover;
-}
