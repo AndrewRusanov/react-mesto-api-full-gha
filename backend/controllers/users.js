@@ -7,7 +7,7 @@ import ConflictError from '../errors/ConflictError.js';
 
 export const getUsers = (req, res, next) => {
   User.find({})
-    .then((data) => res.send(data))
+    .then((users) => res.send(users))
     .catch(next);
 };
 

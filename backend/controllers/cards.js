@@ -5,7 +5,7 @@ import ForbiddenError from '../errors/ForbiddenError.js';
 
 export const getCards = (req, res, next) => {
   Card.find({})
-    .then((data) => res.status(200).send(data))
+    .then((cards) => res.status(200).send(cards))
     .catch((error) => next(error));
 };
 
@@ -15,7 +15,7 @@ export const createCard = (req, res, next) => {
     .then((card) => {
       Card.findById(card._id)
         .populate('owner')
-        .then((data) => res.status(201).send(data))
+        .then((card) => res.status(201).send(card))
         .catch((error) => next(error));
     })
     .catch((error) => (error.name === 'ValidationError'
