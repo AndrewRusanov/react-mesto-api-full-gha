@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://api.mesto.rusanov.nomoredomainsmonster.ru";
 
 const getResponse = (response) => {
   return response.ok

@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "npm run build && scp -r ./dist/* rusanov_anvl@158.160.128.204:/home/rusanov_anvl/react-mesto-api-full-gha/frontend"
+    "deploy": "npm run build && scp -r ./dist/* rusanov_anvl@158.160.134.190:/home/rusanov_anvl/frontend"
   },
   "dependencies": {
     "react": "^18.2.0",
