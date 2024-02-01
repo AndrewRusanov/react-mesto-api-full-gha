@@ -1,8 +1,6 @@
 class Api {
-  constructor({ baseUrl, headers }) {
+  constructor({ baseUrl }) {
     this.baseUrl = baseUrl;
-    this._token = headers['authorization'];
-    this.headers = headers;
   }
 
   // универсальный метод для получения результата запроса
@@ -12,9 +10,10 @@ class Api {
 
   // Загрузка информации о пользователе с сервера
   getUserInformation() {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/users/me`, {
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     }).then(res => this._getResponse(res));
@@ -22,9 +21,10 @@ class Api {
 
   // Загрузак карточек с сервера
   getCards() {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/cards`, {
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     }).then(res => this._getResponse(res));
@@ -32,10 +32,11 @@ class Api {
 
   // Редактирование профиля
   editUserInformation({ name, about }) {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/users/me`, {
       method: 'PATCH',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ name, about })
@@ -44,10 +45,11 @@ class Api {
 
   // Добавление новой карточки
   addNewCard({ name, link }) {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/cards`, {
       method: 'POST',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ name, link })
@@ -56,10 +58,11 @@ class Api {
 
   // Удаление карточки
   deleteCard(cardId) {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     }).then(res => this._getResponse(res));
@@ -67,10 +70,11 @@ class Api {
 
   // Постановка лайка
   _addLike(cardId) {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: {
-        authorization: this._token,
+        authorization: `${token}`,
         'Content-Type': 'application/json'
       }
     }).then(res => this._getResponse(res));
@@ -78,10 +82,11 @@ class Api {
 
   // Удаление лайка
   _deleteLike(cardId) {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     }).then(res => this._getResponse(res));
@@ -94,10 +99,11 @@ class Api {
 
   //Обновление аватара пользователя
   editAvatar(link) {
+    const token = localStorage.getItem('jwt');
     return fetch(`${this.baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
@@ -108,9 +114,5 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: 'https://api.mesto.rusanov.nomoredomainsmonster.ru/',
-  headers: {
-    authorization: 'd686f3c3-25e3-4358-9762-4cd086d00e0f',
-    'Content-Type': 'application/json'
-  }
+  baseUrl: 'http://localhost:3000',
 });
