@@ -1,3 +1,4 @@
+require ('dotenv').config();
 // eslint-disable-next-line import/no-extraneous-dependencies
 import express from "express";
 import mongoose from "mongoose";
@@ -9,6 +10,7 @@ import NotFoundError from "./errors/NotFoundError.js";
 import { requestLogger, errorLogger } from "./middlewares/logger.js";
 
 const { PORT = 3000 } = process.env;
+console.log(process.env.);
 const app = express();
 app.use(cors());
 
