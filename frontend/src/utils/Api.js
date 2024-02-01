@@ -74,7 +74,7 @@ class Api {
     return fetch(`${this.baseUrl}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: {
-        authorization: `${token}`,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     }).then(res => this._getResponse(res));

@@ -47,7 +47,7 @@ function App() {
         );
     }
   }, [loggedIn]);
-  useEffect(() => handleTokenCheck(), []);
+  useEffect(() => handleTokenCheck(), [loggedIn]);
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -67,7 +67,9 @@ function App() {
   };
 
   const handleCardLike = (card) => {
-    const isLiked = card.likes.some((like) => like._id === currentUser._id);
+    const isLiked = card.likes.some((like) => {
+      return like === currentUser._id;
+    });
     api
       .likeCard({ cardId: card._id, isLiked: isLiked })
       .then((newCard) => {
@@ -143,7 +145,7 @@ function App() {
         .then((res) => {
           if (res) {
             setLoggedIn(true);
-            setEmail(res.data.email);
+            setEmail(res.email);
             navigate("/", { replace: true });
           }
         })
