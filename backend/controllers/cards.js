@@ -1,7 +1,7 @@
-import Card from '../models/Card.js';
-import BadRequest from '../errors/BadRequest.js';
-import NotFoundError from '../errors/NotFoundError.js';
-import ForbiddenError from '../errors/ForbiddenError.js';
+import Card from '../models/Card';
+import BadRequest from '../errors/BadRequest';
+import NotFoundError from '../errors/NotFoundError';
+import ForbiddenError from '../errors/ForbiddenError';
 
 export const getCards = (req, res, next) => {
   Card.find({})
@@ -15,7 +15,7 @@ export const createCard = (req, res, next) => {
     .then((card) => {
       Card.findById(card._id)
         .populate('owner')
-        .then((card) => res.status(201).send(card))
+        .then((data) => res.status(201).send(data))
         .catch((error) => next(error));
     })
     .catch((error) => (error.name === 'ValidationError'

@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 import validator from 'validator';
 import bcrypt from 'bcrypt';
-import AuthorizationError from '../errors/AuthorizationError.js';
+import AuthorizationError from '../errors/AuthorizationError';
 
 const userScheme = new Schema(
   {

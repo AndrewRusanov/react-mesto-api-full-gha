@@ -1,11 +1,11 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Router } from 'express';
 import { Joi, celebrate } from 'celebrate';
-import userRouter from './users.js';
-import cardsRouter from './cards.js';
-import urlRegex from '../utils/constants.js';
-import { createUsers, login } from '../controllers/users.js';
-import auth from '../middlewares/auth.js';
+import userRouter from './users';
+import cardsRouter from './cards';
+import urlRegex from '../utils/constants';
+import { createUsers, login } from '../controllers/users';
+import auth from '../middlewares/auth';
 
 const router = Router();
 

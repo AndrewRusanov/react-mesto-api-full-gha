@@ -7,8 +7,8 @@ import {
   dislikeCard,
   getCards,
   likeCard,
-} from '../controllers/cards.js';
-import urlRegex from '../utils/constants.js';
+} from '../controllers/cards';
+import urlRegex from '../utils/constants';
 
 const cardsRouter = Router();
 

@@ -7,8 +7,8 @@ import {
   getUsers,
   getUsersById,
   getUsersInfo,
-} from '../controllers/users.js';
-import urlRegex from '../utils/constants.js';
+} from '../controllers/users';
+import urlRegex from '../utils/constants';
 
 const userRouter = Router();
 

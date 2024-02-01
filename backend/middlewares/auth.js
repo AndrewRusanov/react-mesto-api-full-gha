@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import AuthorizationError from '../errors/AuthorizationError.js';
+import AuthorizationError from '../errors/AuthorizationError';
 
-const {SECRET_KEY} = process.env;
+const { SECRET_KEY = 'some-secret-key' } = process.env;
 
 const auth = (req, res, next) => {
   const { authorization } = req.headers;
