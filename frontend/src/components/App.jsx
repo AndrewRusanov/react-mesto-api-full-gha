@@ -47,6 +47,7 @@ function App() {
         );
     }
   }, [loggedIn]);
+
   useEffect(() => handleTokenCheck(), [loggedIn]);
 
   const handleEditAvatarClick = () => {
@@ -170,6 +171,7 @@ function App() {
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
     setEmail("");
+    setLoggedIn(false);
     navigate("/signin", { replace: true });
   };
 
