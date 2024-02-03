@@ -46,7 +46,7 @@ function App() {
           )
         );
     }
-  }, [loggedIn]);
+  }, [loggedIn, navigate]);
 
   useEffect(() => handleTokenCheck(), [loggedIn]);
 
