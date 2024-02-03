@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import AuthorizationError from '../errors/AuthorizationError';
 
-const { SECRET_KEY = 'some-secret-key' } = process.env;
+const { JWT_SECRET = 'dev-secret' } = process.env;
 
 const auth = (req, res, next) => {
   const { authorization } = req.headers;
@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
   const token = authorization.replace('Bearer ', '');
   let payload;
   try {
-    payload = jwt.verify(token, SECRET_KEY);
+    payload = jwt.verify(token, JWT_SECRET);
   } catch (error) {
     return next(new AuthorizationError('Ошибка авторизации'));
   }
